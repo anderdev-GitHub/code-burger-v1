@@ -1,9 +1,31 @@
 import React from "react";
 
+import {
+  Container,
+  H1,
+  Image,
+  ContainerItens,
+  InputLabel,
+  Input,
+  Button,
+} from "./style";
+
 const App = () => {
+  return (
+    <Container>
+      <Image />
+      <ContainerItens>
+      <H1>Faça seu pedido!</H1>
+      <InputLabel>Pedido</InputLabel>
+      <Input placeholder="Ex: 1 Coca-Cola, 1-X Salada"></Input>
 
-  return <div>Hello World</div>
+      <InputLabel>Nome do Cliente</InputLabel>
+      <Input placeholder="Ex: Satoru Gojo"></Input>
 
+      <Button>Novo Pedido</Button>
+      </ContainerItens>
+    </Container>
+  );
 };
 
 export default App;
