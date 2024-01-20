@@ -1,5 +1,7 @@
 import React from "react";
 
+import LogoHome from "./assets/logo-home.svg"
+
 import {
   Container,
   H1,
@@ -13,7 +15,7 @@ import {
 const App = () => {
   return (
     <Container>
-      <Image />
+      <Image alt="logo-imagem" src={LogoHome}/>
       <ContainerItens>
       <H1>Faça seu pedido!</H1>
       <InputLabel>Pedido</InputLabel>
