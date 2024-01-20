@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import Backgroun from "./assets/background-home.svg"
 
 
 export const Container = styled.div`
-background-color: #0A0A10;
+    background: url("${Backgroun}");
+    background-size: cover;
 `
 export const Image = styled.img`
 
