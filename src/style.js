@@ -105,7 +105,7 @@ export const Button = styled.button`
 
 export const User = styled.li`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.25);
