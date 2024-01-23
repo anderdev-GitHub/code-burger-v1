@@ -30,13 +30,21 @@ const App = () => {
     ]);
   };
 
+  const deleteUser = (userId) => {
+    const newUsers = users.filter((user) => user.id !== userId);
+    setUsers(newUsers);
+  };
+
   return (
     <Container>
       <Image alt="logo-imagem" src={LogoHome} />
       <ContainerItens>
         <H1>Faça seu pedido!</H1>
         <InputLabel>Pedido</InputLabel>
-        <Input ref={inputOrder} placeholder="Ex: 1 Coca-Cola, 1-X Salada"></Input>
+        <Input
+          ref={inputOrder}
+          placeholder="Ex: 1 Coca-Cola, 1-X Salada"
+        ></Input>
 
         <InputLabel>Nome do Cliente</InputLabel>
         <Input ref={inputName} placeholder="Ex: Satoru Gojo"></Input>
@@ -52,7 +60,7 @@ const App = () => {
                   <b>{user.name}</b>
                 </p>
               </div>
-              <button>
+              <button onClick={() => deleteUser(user.id)}>
                 <img src={Trash} alt="lata-de-lixo" />
               </button>
             </User>
