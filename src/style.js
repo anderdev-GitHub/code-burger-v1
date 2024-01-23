@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Backgroun from "./assets/background-home.svg";
+import Background from "./assets/background-home.svg";
 
 export const Container = styled.div`
-  background: url("${Backgroun}");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${Background}");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,6 +14,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 35px;
 `;
+
 export const Image = styled.img`
   margin-top: 11px;
   width: 270px;
@@ -111,12 +112,20 @@ export const User = styled.li`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   width: 282px;
-  height: 38px;
+  height: 88px;
 
   border: none;
   outline: none;
 
   margin-top: 10px;
+
+  padding: 10px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
   p {
     color: #fff;
@@ -124,6 +133,7 @@ export const User = styled.li`
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    padding: 5px;
   }
 
   button {

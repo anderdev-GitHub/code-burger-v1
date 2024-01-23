@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 import LogoHome from "./assets/logo-home.svg";
-import Trash from "./assets/lixeira.svg"
+import Trash from "./assets/lixeira.svg";
 
 import {
   Container,
@@ -11,14 +11,27 @@ import {
   InputLabel,
   Input,
   Button,
-  User
+  User,
 } from "./style";
 
 const App = () => {
-  const users = [
-    { id: Math.random(), name: "Anderson", age: 28 },
-    { id: Math.random(), name: "Anne", age: 28 },
-  ];
+  /*  const users = []; */
+
+  const [users, setUsers] = useState([]);
+  const [order, setOrder] = useState();
+  const [name, setName] = useState();
+
+  const addNewOrder = () => {
+    setUsers([{id: Math.random(), order, name}])
+  };
+
+  const changeInputOrder = (event) => {
+    setOrder(event.target.value)
+  }
+
+  const changeInputName = (event) => {
+    setName(event.target.value)
+  }
 
   return (
     <Container>
@@ -26,18 +39,23 @@ const App = () => {
       <ContainerItens>
         <H1>Faça seu pedido!</H1>
         <InputLabel>Pedido</InputLabel>
-        <Input placeholder="Ex: 1 Coca-Cola, 1-X Salada"></Input>
+        <Input onChange={changeInputOrder} placeholder="Ex: 1 Coca-Cola, 1-X Salada"></Input>
 
         <InputLabel>Nome do Cliente</InputLabel>
-        <Input placeholder="Ex: Satoru Gojo"></Input>
+        <Input onChange={changeInputName} placeholder="Ex: Satoru Gojo"></Input>
 
-        <Button>Novo Pedido</Button>
+        <Button onClick={addNewOrder}>Novo Pedido</Button>
 
         <ul>
           {users.map((user) => (
             <User key={user.id}>
-              <p>{user.name}</p> - <p>{user.age}</p>
-              <button><img src={Trash} alt="lata-de-lixo"/></button>
+              <div>
+              <p>{user.order}</p>
+              <p><b>{user.name}</b></p>
+              </div>
+              <button>
+                <img src={Trash} alt="lata-de-lixo" />
+              </button>
             </User>
           ))}
         </ul>
