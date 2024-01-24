@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 
+import axios from "axios";
+
 import LogoHome from "./assets/logo-home.svg";
 import Trash from "./assets/lixeira.svg";
 
@@ -19,15 +21,22 @@ const App = () => {
   const inputOrder = useRef();
   const inputName = useRef();
 
-  const addNewOrder = () => {
-    setUsers([
+  const addNewOrder = async () => {
+    const data = await axios.post("http://localhost:3001/order", {
+      order: inputOrder.current.value,
+      clientName: inputName.current.value,
+    });
+
+    console.log(data)
+
+    /*  setUsers([
       ...users,
       {
         id: Math.random(),
         order: inputOrder.current.value,
         name: inputName.current.value,
       },
-    ]);
+    ]); */
   };
 
   const deleteUser = (userId) => {
