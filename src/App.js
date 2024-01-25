@@ -22,21 +22,12 @@ const App = () => {
   const inputName = useRef();
 
   const addNewOrder = async () => {
-    const data = await axios.post("http://localhost:3001/order", {
+    const { data: newUser } = await axios.post("http://localhost:3001/order", {
       order: inputOrder.current.value,
       clientName: inputName.current.value,
     });
 
-    console.log(data)
-
-    /*  setUsers([
-      ...users,
-      {
-        id: Math.random(),
-        order: inputOrder.current.value,
-        name: inputName.current.value,
-      },
-    ]); */
+    setUsers([...users, newUser]);
   };
 
   const deleteUser = (userId) => {
@@ -66,7 +57,7 @@ const App = () => {
               <div>
                 <p>{user.order}</p>
                 <p>
-                  <b>{user.name}</b>
+                  <b>{user.clientName}</b>
                 </p>
               </div>
               <button onClick={() => deleteUser(user.id)}>
