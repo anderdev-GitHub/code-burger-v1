@@ -40,7 +40,11 @@ const App = () => {
     fetchUsers();
   }, []);
 
-  const deleteUser = (userId) => {
+  const deleteUser = async (userId) => {
+    const response = await axios.delete(`http://localhost:3001/order/${userId}`);
+    
+    // Exibe a mensagem em um alerta
+    window.alert(response.data.message);
     const newUsers = users.filter((user) => user.id !== userId);
     setUsers(newUsers);
   };
