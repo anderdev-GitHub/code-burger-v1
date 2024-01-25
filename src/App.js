@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import axios from "axios";
 
@@ -29,6 +29,16 @@ const App = () => {
 
     setUsers([...users, newUser]);
   };
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const { data: newUsers } = await axios.get("http://localhost:3001/order");
+
+      setUsers(newUsers);
+    };
+
+    fetchUsers();
+  }, []);
 
   const deleteUser = (userId) => {
     const newUsers = users.filter((user) => user.id !== userId);
