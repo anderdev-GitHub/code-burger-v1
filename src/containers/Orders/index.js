@@ -1,34 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 
-import LogoHome from "./assets/logo-home.svg";
-import Trash from "./assets/lixeira.svg";
+import LogoPedidos from "../../assets/logo-pedidos.svg";
+import Trash from "../../assets/lixeira.svg";
 
 import {
   Container,
   H1,
   Image,
   ContainerItens,
-  InputLabel,
-  Input,
   Button,
   User,
 } from "./style";
 
-const App = () => {
+const Orders = () => {
   const [users, setUsers] = useState([]);
-  const inputOrder = useRef();
-  const inputName = useRef();
-
-  const addNewOrder = async () => {
-    const { data: newUser } = await axios.post("http://localhost:3001/order", {
-      order: inputOrder.current.value,
-      clientName: inputName.current.value,
-    });
-
-    setUsers([...users, newUser]);
-  };
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -41,8 +28,10 @@ const App = () => {
   }, []);
 
   const deleteUser = async (userId) => {
-    const response = await axios.delete(`http://localhost:3001/order/${userId}`);
-    
+    const response = await axios.delete(
+      `http://localhost:3001/order/${userId}`
+    );
+
     // Exibe a mensagem em um alerta
     window.alert(response.data.message);
     const newUsers = users.filter((user) => user.id !== userId);
@@ -51,19 +40,9 @@ const App = () => {
 
   return (
     <Container>
-      <Image alt="logo-imagem" src={LogoHome} />
+      <Image alt="logo-imagem" src={LogoPedidos} />
       <ContainerItens>
-        <H1>Faça seu pedido!</H1>
-        <InputLabel>Pedido</InputLabel>
-        <Input
-          ref={inputOrder}
-          placeholder="Ex: 1 Coca-Cola, 1-X Salada"
-        ></Input>
-
-        <InputLabel>Nome do Cliente</InputLabel>
-        <Input ref={inputName} placeholder="Ex: Satoru Gojo"></Input>
-
-        <Button onClick={addNewOrder}>Novo Pedido</Button>
+        <H1>Pedidos</H1>
 
         <ul>
           {users.map((user) => (
@@ -80,9 +59,11 @@ const App = () => {
             </User>
           ))}
         </ul>
+
+        <Button>Voltar</Button>
       </ContainerItens>
     </Container>
   );
 };
 
-export default App;
+export default Orders;
