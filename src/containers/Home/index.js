@@ -42,7 +42,7 @@ const App = () => {
         <InputLabel>Nome do Cliente</InputLabel>
         <Input ref={inputName} placeholder="Ex: Satoru Gojo"></Input>
 
-        <Button onClick={addNewOrder}>Novo Pedido</Button>
+        <Button to="/pedidos" onClick={addNewOrder}>Novo Pedido</Button>
       </ContainerItens>
     </Container>
   );

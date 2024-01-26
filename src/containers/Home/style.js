@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 import Background from "../../assets/background-home.svg";
 
 export const Container = styled.div`
@@ -79,8 +80,9 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: #bcc622;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
 
   width: 282px;
   height: 38px;
@@ -90,7 +92,9 @@ export const Button = styled.button`
   font-size: 17px;
   font-style: normal;
   font-weight: 900;
-  line-height: 2.5px;
+  line-height: 38px;
+
+  text-decoration: none;
 
   cursor: pointer;
 
