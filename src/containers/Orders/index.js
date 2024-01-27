@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
 import LogoPedidos from "../../assets/logo-pedidos.svg";
 import Trash from "../../assets/lixeira.svg";
 
-import {
-  Container,
-  H1,
-  Image,
-  ContainerItens,
-  Button,
-  User,
-} from "./style";
+import { Container, H1, Image, ContainerItens, Button, User } from "./style";
 
 const Orders = () => {
   const [users, setUsers] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -36,6 +31,10 @@ const Orders = () => {
     window.alert(response.data.message);
     const newUsers = users.filter((user) => user.id !== userId);
     setUsers(newUsers);
+  };
+
+  const goBackPage = () => {
+    history.push("/");
   };
 
   return (
@@ -60,7 +59,7 @@ const Orders = () => {
           ))}
         </ul>
 
-        <Button to="/">Voltar</Button>
+        <Button onClick={goBackPage}>Voltar</Button>
       </ContainerItens>
     </Container>
   );

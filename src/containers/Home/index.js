@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 import LogoHome from "../../assets/logo-home.svg";
@@ -16,6 +16,8 @@ import {
 
 const App = () => {
   const [users, setUsers] = useState([]);
+  const history = useHistory()
+
   const inputOrder = useRef();
   const inputName = useRef();
 
@@ -26,6 +28,8 @@ const App = () => {
     });
 
     setUsers([...users, newUser]);
+
+    history.push("/pedidos")
   };
 
   return (
@@ -42,7 +46,7 @@ const App = () => {
         <InputLabel>Nome do Cliente</InputLabel>
         <Input ref={inputName} placeholder="Ex: Satoru Gojo"></Input>
 
-        <Button to="/pedidos" onClick={addNewOrder}>Novo Pedido</Button>
+        <Button onClick={addNewOrder}>Novo Pedido</Button>
       </ContainerItens>
     </Container>
   );

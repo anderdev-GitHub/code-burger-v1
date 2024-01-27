@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom"
 import Background from "../../assets/background-home.svg";
 
 export const Container = styled.div`
@@ -7,6 +6,8 @@ export const Container = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  height: 100%;
   min-height: 100vh;
 
   display: flex;
@@ -76,13 +77,15 @@ export const Input = styled.input`
   line-height: normal;
 
   &::placeholder {
-    color: #bcc622;
+    color: #000;
   }
 `;
 
-export const Button = styled(Link)`
-  background-color: #bcc622;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+export const Button = styled.button`
+  background: linear-gradient(157deg, rgba(74, 78, 13, 5.60) 0.84%, rgba(74, 78, 13, 5.60) 0.85%, rgba(129, 51, 155, 0.6) 100%);
+  backdrop-filter: blur(22.5px);
+  border: solid 1px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.55);
 
   width: 282px;
   height: 38px;
