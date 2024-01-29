@@ -34,17 +34,6 @@ export const ContainerItens = styled.div`
   margin-bottom: 5px;
 `;
 
-export const H1 = styled.h1`
-  color: #eee;
-  text-align: center;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  margin-bottom: 10px;
-`;
-
 export const InputLabel = styled.p`
   color: #eee;
   font-size: 18px;

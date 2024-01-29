@@ -6,7 +6,9 @@ import axios from "axios";
 import LogoPedidos from "../../assets/logo-pedidos.svg";
 import Trash from "../../assets/lixeira.svg";
 
-import { Container, H1, Image, ContainerItens, Button, User } from "./style";
+import H1 from "../../components/Title"
+
+import { Container, Image, ContainerItens, Button, User } from "./style";
 
 const Orders = () => {
   const [users, setUsers] = useState([]);

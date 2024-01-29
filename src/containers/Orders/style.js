@@ -34,17 +34,6 @@ export const ContainerItens = styled.div`
   margin-bottom: 5px;
 `;
 
-export const H1 = styled.h1`
-  color: #eee;
-  text-align: center;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  margin-bottom: 10px;
-`;
-
 export const Button = styled.button`
   background: linear-gradient(157deg, rgba(129, 51, 155, 0.6) 0.84%, rgba(129, 51, 155, 0.6) 0.85%, rgba(74, 78, 13, 5.60) 100%);
   backdrop-filter: blur(22.5px);

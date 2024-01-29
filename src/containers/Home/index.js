@@ -4,9 +4,10 @@ import axios from "axios";
 
 import LogoHome from "../../assets/logo-home.svg";
 
+import H1 from "../../components/Title"
+
 import {
   Container,
-  H1,
   Image,
   ContainerItens,
   InputLabel,
