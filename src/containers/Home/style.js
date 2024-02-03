@@ -22,18 +22,6 @@ export const Image = styled.img`
   width: 270px;
 `;
 
-export const ContainerItens = styled.div`
-  background: rgba(129, 51, 155, 0.6);
-  padding: 26px 26px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-
-  border-radius: 20px 20px;
-
-  margin-bottom: 5px;
-`;
-
 export const InputLabel = styled.p`
   color: #eee;
   font-size: 18px;

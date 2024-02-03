@@ -22,18 +22,6 @@ export const Image = styled.img`
   width: 170px;
 `;
 
-export const ContainerItens = styled.div`
-  background: rgba(129, 51, 155, 0.6);
-  padding: 26px 26px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-
-  border-radius: 20px 20px;
-
-  margin-bottom: 5px;
-`;
-
 export const Button = styled.button`
   background: linear-gradient(157deg, rgba(129, 51, 155, 0.6) 0.84%, rgba(129, 51, 155, 0.6) 0.85%, rgba(74, 78, 13, 5.60) 100%);
   backdrop-filter: blur(22.5px);

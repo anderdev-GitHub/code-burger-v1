@@ -4,20 +4,14 @@ import axios from "axios";
 
 import LogoHome from "../../assets/logo-home.svg";
 
-import H1 from "../../components/Title"
+import H1 from "../../components/Title";
+import ContainerItens from "../../components/ContainerItens";
 
-import {
-  Container,
-  Image,
-  ContainerItens,
-  InputLabel,
-  Input,
-  Button,
-} from "./style";
+import { Container, Image, InputLabel, Input, Button } from "./style";
 
 const App = () => {
   const [users, setUsers] = useState([]);
-  const history = useHistory()
+  const history = useHistory();
 
   const inputOrder = useRef();
   const inputName = useRef();
@@ -30,7 +24,7 @@ const App = () => {
 
     setUsers([...users, newUser]);
 
-    history.push("/pedidos")
+    history.push("/pedidos");
   };
 
   return (

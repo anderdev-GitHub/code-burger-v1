@@ -8,7 +8,9 @@ import Trash from "../../assets/lixeira.svg";
 
 import H1 from "../../components/Title"
 
-import { Container, Image, ContainerItens, Button, User } from "./style";
+import ContainerItens from "../../components/ContainerItens"
+
+import { Container, Image, Button, User } from "./style";
 
 const Orders = () => {
   const [users, setUsers] = useState([]);
