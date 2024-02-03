@@ -29,8 +29,6 @@ export const InputLabel = styled.p`
   font-weight: 700;
   line-height: 22px;
   letter-spacing: -0.408px;
-
-  margin-left: 15px;
 `;
 
 export const Input = styled.input`
