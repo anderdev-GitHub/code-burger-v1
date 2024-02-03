@@ -6,8 +6,9 @@ import LogoHome from "../../assets/logo-home.svg";
 
 import H1 from "../../components/Title";
 import ContainerItens from "../../components/ContainerItens";
+import Button from "../../components/Button";
 
-import { Container, Image, InputLabel, Input, Button } from "./style";
+import { Container, Image, InputLabel, Input } from "./style";
 
 const App = () => {
   const [users, setUsers] = useState([]);

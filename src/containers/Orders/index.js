@@ -9,8 +9,9 @@ import Trash from "../../assets/lixeira.svg";
 import H1 from "../../components/Title"
 
 import ContainerItens from "../../components/ContainerItens"
+import Button from "../../components/Button";
 
-import { Container, Image, Button, User } from "./style";
+import { Container, Image, User } from "./style";
 
 const Orders = () => {
   const [users, setUsers] = useState([]);
@@ -63,7 +64,7 @@ const Orders = () => {
           ))}
         </ul>
 
-        <Button onClick={goBackPage}>Voltar</Button>
+        <Button isBack={true} onClick={goBackPage}>Voltar</Button>
       </ContainerItens>
     </Container>
   );
