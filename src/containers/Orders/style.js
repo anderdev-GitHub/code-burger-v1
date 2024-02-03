@@ -36,7 +36,7 @@ export const User = styled.li`
   border: none;
   outline: none;
 
-  margin-top: 10px;
+  margin: 22px 0 22px 0;
 
   padding: 10px;
 
