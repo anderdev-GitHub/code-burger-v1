@@ -19,7 +19,7 @@ const Orders = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const { data: newUsers } = await axios.get("http://localhost:3001/order");
+      const { data: newUsers } = await axios.get("https://api-simulada-hamburgueria.vercel.app/order");
 
       setUsers(newUsers);
     };
@@ -29,7 +29,7 @@ const Orders = () => {
 
   const deleteUser = async (userId) => {
     const response = await axios.delete(
-      `http://localhost:3001/order/${userId}`
+      `https://api-simulada-hamburgueria.vercel.app/order/${userId}`
     );
 
     // Exibe a mensagem em um alerta

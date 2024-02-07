@@ -18,7 +18,7 @@ const App = () => {
   const inputName = useRef();
 
   const addNewOrder = async () => {
-    const { data: newUser } = await axios.post("http://localhost:3001/order", {
+    const { data: newUser } = await axios.post("https://api-simulada-hamburgueria.vercel.app/order", {
       order: inputOrder.current.value,
       clientName: inputName.current.value,
     });
