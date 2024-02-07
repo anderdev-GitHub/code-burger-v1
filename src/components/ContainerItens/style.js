@@ -8,7 +8,7 @@ export const ContainerItens = styled.div`
   flex-wrap: wrap;
   align-items: center;
 
-  border-radius: 20px 20px;
+  border-radius: 20px;
 
   margin-bottom: 5px;
 `;

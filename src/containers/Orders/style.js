@@ -2,11 +2,12 @@ import styled from "styled-components";
 import Background from "../../assets/background-pedidos.svg";
 
 export const Container = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${Background}");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("${Background}");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+
   height: 100%;
   min-height: 100vh;
 
@@ -58,6 +59,16 @@ export const User = styled.li`
   button {
     background: transparent;
     border: none;
-    cursor: pointer
+    cursor: pointer;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      transform: scale(1.2);
+    }
   }
 `;
